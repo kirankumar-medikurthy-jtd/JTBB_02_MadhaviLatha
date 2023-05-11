@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<title>calculator</title>
+		<style>
+		
+		body{
+
+			background-color:orange;
+		}
+
+		#aqua{
+			width:380px;
+			background-color:aqua;
+			padding: 10px;
+			margin:auto;
+			margin-top:120px;
+		}
+
+		#main{
+			display:flex;	
+		}
+		
+
+		#aqua1{
+			background-color:white;
+			padding:38px 39px;
+			margin:8px;
+		}
+
+		.aqua2{
+			padding: 30px 35px;
+			margin:7px;
+		}
+
+		.red{
+			background-color:red;
+		}
+
+		.yellow{
+			background-color:yellow;
+		}
+
+		.white{
+			background-color:white;
+		}
+
+		.space{
+			padding:30px 38px;
+		}
+
+
+
+		
+		
+		
+		
+		
+		</style>
+	</head>
+	<body>
+			<div id="aqua">
+				<div id="aqua1"></div>
+				<div id="main">
+						<div class="aqua2 white">1</div>
+						<div class="aqua2 white">2</div>
+						<div class="aqua2 white">3</div>
+						<div class="aqua2 yellow">+</div>
+				</div>
+				<div id="main">
+						<div class="aqua2 white">4</div>
+						<div class="aqua2 white">5</div>
+						<div class="aqua2 white">6</div>
+						<div class="aqua2 yellow space">-</div>
+				</div>
+				<div id="main">
+						<div class="aqua2 white">7</div>
+						<div class="aqua2 white">8</div>
+						<div class="aqua2 white">9</div>
+						<div class="aqua2 yellow space">*</div>
+				</div>
+				<div id="main">
+						<div class="aqua2 red">c</div>
+						<div class="aqua2 white">0</div>
+						<div class="aqua2 white">=</div>
+						<div class="aqua2 yellow space">/</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<script>
+			 var keys = document.querySelectorAll("#main");
+  			var bag = "";
+
+ 			 for (var i = 0; i < keys.length; i++) {
+   				 keys[i].addEventListener("click", myCalculator);
+ 			 }
+
+ 			 function myCalculator() {
+  			 	 var targetNumber = event.target.innerText;
+
+  			  	if (targetNumber == "c") {
+     					bag = "";
+    			  		document.querySelector("#aqua1").innerText = "";
+   				 } else if (targetNumber == "=") {
+     					 	document.querySelector("#aqua1").innerText = eval(bag);
+     					 	bag= ""
+  				 	} else {
+     				 		bag = bag + targetNumber;
+    			  			document.querySelector("#aqua1").innerText = bag;
+  		  			}
+  			}
+			
+			
+			
+			
+			
+			
+			
+			
+			</script>
+		
+		
+	</body>
+</html>
+
